@@ -1,0 +1,52 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ${DEPLOYMENT_NAME}
+spec:
+  replicas: ${REPLICA_COUNT}
+  selector:
+    matchLabels:
+      app: ${APP_NAME}
+  template:
+    metadata:
+      labels:
+        app: ${APP_NAME}
+    spec:
+      containers:
+        - name: ${CONTAINER_NAME}
+          image: ${IMAGE_NAME}:${IMAGE_VERSION}
+          imagePullPolicy: IfNotPresent
+          command: ["/opt/keycloak/bin/kc.sh"]
+          args: ["start-dev", "--hostname-strict=false"]
+          env:
+            - name: TZ
+              value: "${TZ}"
+            - name: KEYCLOAK_ADMIN
+              value: "${KEYCLOAK_ADMIN}"
+            - name: KEYCLOAK_ADMIN_PASSWORD
+              value: "${KEYCLOAK_ADMIN_PASSWORD}"
+            - name: KEYCLOAK_DB_URL
+              value: "${KEYCLOAK_DB_URL}"
+            - name: KEYCLOAK_DB_USERNAME
+              value: "${KEYCLOAK_DB_USERNAME}"
+            - name: KEYCLOAK_DB_PASSWORD
+              value: "${KEYCLOAK_DB_PASSWORD}"
+            - name: KEYCLOAK_HOSTNAME
+              value: "${KEYCLOAK_HOSTNAME}"
+            - name: CACHE_OWNERS
+              value: "${CACHE_OWNERS}"
+            - name: JGROUPS_DISCOVERY_PROTOCOL
+              value: "dns.DNS_PING"
+            - name: JGROUPS_DISCOVERY_PROPERTIES
+              value: "${JGROUPS_DISCOVERY_PROPERTIES}"
+            - name: CACHE_STACK
+              value: "tcp"
+          ports:
+            - containerPort: ${DOCKER_INTERNAL_PORT}
+          volumeMounts:
+            - mountPath: /opt/keycloak/data
+              name: keycloak-data
+      volumes:
+        - name: keycloak-data
+          persistentVolumeClaim:
+            claimName: ${PVC_NAME}

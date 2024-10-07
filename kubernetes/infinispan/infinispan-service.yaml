@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: ${INFINISPAN_SERVICE_NAME}
+spec:
+  type: ClusterIP
+  selector:
+    app: ${INFINISPAN_APP_NAME}
+  ports:
+    - port: 11222

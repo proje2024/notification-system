@@ -1,0 +1,106 @@
+.event-form {
+  background-color: var(--background-color-event);
+  padding: 10px;
+  width: 100%;
+  max-width: 600px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 20px;
+}
+.event-form-view {
+  width: 100%;
+}
+.event-form-header {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  color: var(--title-color);
+}
+
+.event-form h3 {
+  margin: 0;
+}
+
+.event-form p {
+  margin: 0;
+  color: var(--title-color);
+  width: 100%;
+}
+
+.event-form input,
+.event-form select {
+  margin-left: 10px;
+  padding: 0 !important;
+  flex: 1;
+}
+
+.event-form button {
+  cursor: pointer;
+}
+
+.event-form-title {
+  padding-right: 10px !important;
+  color: var(--content-color);
+}
+.event-form-input-group {
+  display: flex;
+  align-items: center;
+}
+.event-form-error-message {
+  margin-left: 1rem;
+  color: var(--error-color);
+  font-size: 0.875rem;
+}
+.event-form-error-message.logic {
+  margin-top: 10px;
+}
+.event-form-error-messages-block {
+  margin-top: 10px;
+  display: block;
+}
+.event-form-input-file {
+  display: flex;
+  align-items: center;
+}
+.event-form-close-icon-button {
+  background-color: transparent;
+  border: none;
+}
+
+.event-form-close-icon {
+  color: var(--text-color) !important;
+  font-size: 15px !important;
+}
+
+.event-form-close-icon:hover {
+  transition: color 0.3s !important;
+  background-color: var(--title-color) !important ;
+  color: var(--rbc-today-bg-color) !important;
+  border-radius: 50% !important;
+}
+.event-form-input-close-button {
+  background-color: transparent;
+  border: none;
+}
+.event-form-input-close-icon {
+  color: var(--text-color) !important;
+  font-size: 15px !important;
+}
+
+.event-form-input-close-icon:hover {
+  transition: color 0.3s !important;
+  background-color: var(--title-color) !important ;
+  color: var(--rbc-today-bg-color) !important;
+  border-radius: 50% !important;
+}
+
+.event-form-file-upload {
+  display: flex;
+  align-items: center;
+}
+
+.event-form-file-upload input[type="file"] {
+  margin-left: 10px;
+}

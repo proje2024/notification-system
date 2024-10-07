@@ -1,0 +1,46 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: ${DEPLOYMENT_NAME}
+  labels:
+    app: ${APP_NAME}
+spec:
+  serviceName: "${SERVICE_NAME}"
+  replicas: 3 # 1 Primary, 2 Replica
+  selector:
+    matchLabels:
+      app: ${APP_NAME}
+  template:
+    metadata:
+      labels:
+        app: ${APP_NAME}
+    spec:
+      containers:
+        - name: ${CONTAINER_NAME}
+          image: ${IMAGE_NAME}:${IMAGE_VERSION}
+          env:
+            - name: POSTGRES_USER
+              value: "${POSTGRES_USER}"
+            - name: POSTGRES_PASSWORD
+              value: "${POSTGRES_PASSWORD}"
+            - name: POSTGRES_DB
+              value: "${POSTGRES_DB}"
+            - name: PG_MODE # İlk pod Primary, diğerleri Replica olacak
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.labels.pg-mode
+            - name: PG_PRIMARY_HOST # Primary pod ilk başlatılan postgres-0 olacak
+              value: "postgres-0.${SERVICE_NAME}"
+            - name: PG_PRIMARY_PORT
+              value: "${DOCKER_INTERNAL_PORT}"
+            - name: TZ
+              value: "${TZ}"
+          ports:
+            - containerPort: ${DOCKER_INTERNAL_PORT}
+          volumeMounts:
+            - name: postgres-storage
+              mountPath: /var/lib/postgresql/data
+      volumes:
+        - name: postgres-storage
+          persistentVolumeClaim:
+            claimName: ${PVC_NAME}

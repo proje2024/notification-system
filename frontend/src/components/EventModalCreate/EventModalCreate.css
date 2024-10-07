@@ -1,0 +1,108 @@
+.event-modal-create {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 450px;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  padding: 20px;
+  border: 1px solid #ccc;
+  box-shadow: 24px;
+  border-radius: 8px;
+  outline: none;
+}
+
+.event-modal-create-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.event-modal-create .MuiTextField-root,
+.event-modal-create .MuiFormControl-root {
+  margin-bottom: 15px;
+}
+
+.event-modal-create-title {
+  padding-right: 10px !important;
+  color: var(--content-color);
+}
+
+.event-modal-create-file-upload {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.event-modal-create-file-upload input[type="file"] {
+  margin-left: 10px;
+}
+
+.event-modal-create-close-icon {
+  color: var(--text-color) !important;
+  font-size: 15px !important;
+  margin-bottom: 4px !important;
+  margin-left: -3px !important;
+}
+
+.event-modal-create-close-icon:hover {
+  transition: color 0.3s !important;
+  background-color: var(--title-color) !important;
+  color: var(--rbc-today-bg-color) !important;
+  border-radius: 50% !important;
+}
+
+.event-modal-create-close-icon-button {
+  background-color: transparent;
+  border: none;
+}
+
+.event-modal-create-input-file {
+  display: flex;
+  align-items: center;
+}
+
+.event-modal-create-input-close-icon {
+  color: var(--text-color) !important;
+  font-size: 15px !important;
+  margin-bottom: 4px !important;
+  margin-left: -3px !important;
+}
+
+.event-modal-create-input-close-icon:hover {
+  transition: color 0.3s !important;
+  background-color: var(--title-color) !important;
+  color: var(--rbc-today-bg-color) !important;
+  border-radius: 50% !important;
+}
+
+.event-modal-create-input-close-button {
+  background-color: transparent;
+  border: none;
+}
+
+.event-modal-create-error-message {
+  color: var(--error-color);
+  font-size: 0.875rem;
+}
+.event-modal-create-invitees-list {
+  list-style-type: none;
+  padding: 0;
+  width: 100%;
+  margin: 0px;
+}
+.event-modal-create-invitees-list li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+  background-color: transparent;
+  padding: 5px 10px 5px 10px;
+  border-radius: 4px;
+  width: 100%;
+}
+.css-19f3993:hover {
+  background-color: transparent !important;
+  color: #e8eaed5c !important;
+}

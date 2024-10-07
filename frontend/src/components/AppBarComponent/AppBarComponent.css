@@ -1,0 +1,17 @@
+.styled-toolbar {
+  display: flex !important;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.styled-right-toolbar {
+  justify-content: flex-end !important;
+  flex-grow: 1;
+  display: flex;
+}
+
+.search-bar-search-logo {
+  font-family: 'Passion One', sans-serif !important;
+  font-size: 40px !important;
+  margin: 0 50px !important;
+}

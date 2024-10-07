@@ -1,0 +1,42 @@
+.home-container {
+  padding-top: 200px;
+  padding-left: 250px;
+  padding-right: 250px;
+}
+
+.home h1 {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.home-content {
+  display: flex;
+  justify-content: space-between;
+}
+
+.home-left,
+.home-right {
+  width: 45%;
+}
+
+.toggle-button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 600px;
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+.toggle-button:hover {
+  background-color: #0056b3;
+}
+.home-event-form-container {
+  margin-top: 20px;
+}

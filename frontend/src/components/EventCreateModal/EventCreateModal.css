@@ -1,0 +1,57 @@
+.create-event-modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 450px;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  padding: 20px;
+  border: 1px solid #ccc;
+  box-shadow: 24px;
+  border-radius: 8px;
+  outline: none;
+}
+
+.create-event-modal-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.create-event-modal .MuiTextField-root,
+.create-event-modal .MuiFormControl-root {
+  margin-bottom: 15px;
+}
+.create-event-modal-title {
+  padding-right: 10px !important;
+  color: var(--content-color);
+}
+.create-event-modal-input-close-button {
+  background-color: transparent;
+  border: none;
+}
+
+.create-event-modal-input-close-icon {
+  color: var(--text-color) !important;
+  font-size: 15px !important;
+  margin-bottom: 4px !important;
+  margin-left: -3px !important;
+}
+
+.create-event-modal-input-close-icon:hover {
+  transition: color 0.3s !important;
+  background-color: var(--title-color) !important ;
+  color: var(--rbc-today-bg-color) !important;
+  border-radius: 50% !important;
+}
+
+.create-event-modal-file-upload {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.create-event-modal-file-upload input[type="file"] {
+  margin-left: 10px;
+}

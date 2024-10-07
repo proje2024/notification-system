@@ -1,0 +1,95 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ${DEPLOYMENT_NAME}
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: ${APP_NAME}
+  template:
+    metadata:
+      labels:
+        app: ${APP_NAME}
+    spec:
+      containers:
+        - name: ${CONTAINER_NAME}
+          image: ${IMAGE_NAME}:${IMAGE_VERSION}
+          imagePullPolicy: IfNotPresent
+          env:
+            - name: SPRING_DATASOURCE_URL
+              value: "${SPRING_DATASOURCE_URL}"
+            - name: SPRING_DATASOURCE_USERNAME
+              value: "${SPRING_DATASOURCE_USERNAME}"
+            - name: SPRING_DATASOURCE_PASSWORD
+              value: "${SPRING_DATASOURCE_PASSWORD}"
+            - name: TZ
+              value: "${TZ}"
+            - name: SPRING_JPA_HIBERNATE_DDL_AUTO
+              value: "${SPRING_JPA_HIBERNATE_DDL_AUTO}"
+            - name: SPRING_JPA_SHOW_SQL
+              value: "${SPRING_JPA_SHOW_SQL}"
+            - name: HIBERNATE_DIALECT
+              value: "${HIBERNATE_DIALECT}"
+            - name: API_HOST
+              value: "${API_HOST}"
+            - name: API_NODE_PORT
+              value: "${API_NODE_PORT}"
+            - name: FRONTEND_HOST
+              value: "${FRONTEND_HOST}"
+            - name: FRONTEND_PORT
+              value: "${FRONTEND_PORT}"
+            - name: FILE_UPLOAD_DIR
+              value: "${FILE_UPLOAD_DIR}"
+            - name: FILE_SIZE
+              value: "${FILE_SIZE}"
+            - name: SPRING_SERVLET_MULTIPART_ENABLED
+              value: "${SPRING_SERVLET_MULTIPART_ENABLED}"
+            - name: SPRING_SERVLET_MULTIPART_MAX_FILE_SIZE
+              value: "${SPRING_SERVLET_MULTIPART_MAX_FILE_SIZE}"
+            - name: SPRING_SERVLET_MULTIPART_MAX_REQUEST_SIZE
+              value: "${SPRING_SERVLET_MULTIPART_MAX_REQUEST_SIZE}"
+            - name: LOGGING_LEVEL_ROOT
+              value: "${LOGGING_LEVEL_ROOT}"
+            - name: LOGGING_LEVEL_APP
+              value: "${LOGGING_LEVEL_APP}"
+            - name: SPRING_JPA_OPEN_IN_VIEW
+              value: "${SPRING_JPA_OPEN_IN_VIEW}"
+            - name: SPRING_MAIL_HOST
+              value: "${SPRING_MAIL_HOST}"
+            - name: SPRING_MAIL_PORT
+              value: "${SPRING_MAIL_PORT}"
+            - name: SPRING_MAIL_USERNAME
+              value: "${SPRING_MAIL_USERNAME}"
+            - name: SPRING_MAIL_PASSWORD
+              value: "${SPRING_MAIL_PASSWORD}"
+            - name: SPRING_MAIL_PROPERTIES_MAIL_SMTP_AUTH
+              value: "${SPRING_MAIL_PROPERTIES_MAIL_SMTP_AUTH}"
+            - name: SPRING_MAIL_PROPERTIES_MAIL_SMTP_STARTTLS_ENABLE
+              value: "${SPRING_MAIL_PROPERTIES_MAIL_SMTP_STARTTLS_ENABLE}"
+            - name: POSTGRES_USER
+              value: "${POSTGRES_USER}"
+            - name: POSTGRES_PASSWORD
+              value: "${POSTGRES_PASSWORD}"
+            - name: POSTGRES_DB
+              value: "${POSTGRES_DB}"
+            - name: KEYCLOAK_HOST
+              value: "${KEYCLOAK_HOST}"
+            - name: KEYCLOAK_PORT
+              value: "${KEYCLOAK_PORT}"
+            - name: KEYCLOAK_REALM
+              value: "${KEYCLOAK_REALM}"
+            - name: KEYCLOAK_CLIENT
+              value: "${KEYCLOAK_CLIENT}"
+            - name: KEYCLOAK_SECRET
+              value: "${KEYCLOAK_SECRET}"
+            - name: REDIRECT_URI
+              value: "${REDIRECT_URI}"
+            - name: FRONTEND_SERVICE_NAME
+              value: "${FRONTEND_SERVICE_NAME}"
+            - name: FRONTEND_SERVICE_URL
+              value: "${FRONTEND_SERVICE_URL}"
+            - name: FRONTEND_LOCAL_URL
+              value: "${FRONTEND_LOCAL_URL}"
+          ports:
+            - containerPort: ${DOCKER_INTERNAL_PORT}

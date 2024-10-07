@@ -1,0 +1,81 @@
+.event-modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 450px;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  padding: 20px;
+  border: 1px solid #ccc;
+  box-shadow: 24px;
+  border-radius: 8px;
+  outline: none;
+}
+
+.event-modal-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.event-modal .MuiTextField-root,
+.event-modal .MuiFormControl-root {
+  margin-bottom: 15px;
+}
+
+.event-modal-title {
+  padding-right: 10px !important;
+  color: var(--content-color);
+}
+
+.event-modal-file-upload {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.event-modal-file-upload input[type="file"] {
+  margin-left: 10px;
+}
+
+.event-modal-close-icon {
+  color: var(--text-color) !important;
+  font-size: 15px !important;
+  margin-bottom: 4px !important;
+  margin-left: -3px !important;
+}
+
+.event-modal-close-icon:hover {
+  transition: color 0.3s !important;
+  background-color: var(--title-color) !important ;
+  color: var(--rbc-today-bg-color) !important;
+  border-radius: 50% !important;
+}
+
+.event-modal-close-icon-button {
+  background-color: transparent;
+  border: none;
+}
+.event-modal-input-file {
+  display: flex;
+  align-items: center;
+}
+
+.event-modal-input-close-icon {
+  color: var(--text-color) !important;
+  font-size: 15px !important;
+  margin-bottom: 4px !important;
+  margin-left: -3px !important;
+}
+
+.event-modal-input-close-icon:hover {
+  transition: color 0.3s !important;
+  background-color: var(--title-color) !important ;
+  color: var(--rbc-today-bg-color) !important;
+  border-radius: 50% !important;
+}
+.event-modal-input-close-button {
+  background-color: transparent;
+  border: none;
+}

@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ${INFINISPAN_DEPLOYMENT_NAME}
+  labels:
+    app: ${INFINISPAN_APP_NAME}
+spec:
+  replicas: ${INFINISPAN_REPLICA_COUNT}
+  selector:
+    matchLabels:
+      app: ${INFINISPAN_APP_NAME}
+  template:
+    metadata:
+      labels:
+        app: ${INFINISPAN_APP_NAME}
+    spec:
+      containers:
+        - name: ${INFINISPAN_CONTAINER_NAME}
+          image: ${INFINISPAN_IMAGE_NAME}:${INFINISPAN_IMAGE_VERSION}
+          ports:
+            - containerPort: 11222
+          env:
+            - name: USER
+              value: "${INFINISPAN_USER}"
+            - name: PASS
+              value: "${INFINISPAN_PASS}"

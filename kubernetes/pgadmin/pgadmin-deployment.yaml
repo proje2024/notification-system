@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ${DEPLOYMENT_NAME}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ${APP_NAME}
+  template:
+    metadata:
+      labels:
+        app: ${APP_NAME}
+    spec:
+      containers:
+        - name: ${CONTAINER_NAME}
+          image: ${IMAGE_NAME}:${IMAGE_VERSION}
+          env:
+            - name: PGADMIN_DEFAULT_EMAIL
+              value: "${PGADMIN_DEFAULT_EMAIL}"
+            - name: PGADMIN_DEFAULT_PASSWORD
+              value: "${PGADMIN_DEFAULT_PASSWORD}"
+            - name: TZ
+              value: "${TZ}"
+          ports:
+            - containerPort: ${DOCKER_INTERNAL_PORT}
